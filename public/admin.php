@@ -3,13 +3,13 @@
 use App\Main\CompoundClass;
 use Devlee\WakerORM\DB\Database;
 
-include_once "ass-partials/global.php";
-include_once "ass-classes/config.php";
-include_once "ass-classes/Database.php";
-include_once "ass-classes/FileUpload.php";
-include_once "ass-classes/Library.php";
-include_once "ass-classes/CompoundClass.php";
-include_once "ass-classes/pclzip.lib.php";
+include_once "partials/global.php";
+include_once "classes/config.php";
+include_once "classes/Database.php";
+include_once "classes/FileUpload.php";
+include_once "classes/Library.php";
+include_once "classes/CompoundClass.php";
+include_once "classes/pclzip.lib.php";
 
 $conn = (new Database)->connect();
 $app = new CompoundClass();
@@ -18,28 +18,28 @@ $app = new CompoundClass();
 $auth = $_GET['auth'] ?? null;
 if ($auth === 'no-auth') {
   $_SESSION['auth_user'] = 'no-auth';
-  header("Location: /admin");
+  header("Location: /admin.php");
 } elseif ($auth === 'auth') {
   unset($_SESSION['auth_user']);
-  header("Location: /admin");
+  header("Location: /admin.php");
 }
 
 
 if ($user === 'admin') {
   if (isset($_GET['state'])) {
     $app->updateStatus($_GET['state'], $_GET['key']);
-    header("Location: /admin");
+    header("Location: /admin.php");
   }
   if (isset($_GET['delete'])) {
     $app->deleteDoc($_GET['delete']);
-    header("Location: /admin");
+    header("Location: /admin.php");
   }
 }
 
 $token = $_POST['auth_token'] ?? false;
 if ($token && $token === "asdf@") {
   $_SESSION['auth_user'] = 'admin';
-  header("Location: /admin");
+  header("Location: /admin.php");
 }
 
 $docs = $app->getDocs($_GET['filter'] ?? 'id');
@@ -56,7 +56,7 @@ $canGenerateMsg = '';
 
 if (isset($_POST['generate_user'])) {
   $generate_user = $_POST['generate_user'];
-  if ($generate_user === 'shola') {
+  if ($generate_user === 'pass123') {
     $canGenerateMsg = '';
     $canGenerate = true;
   } else {
@@ -68,7 +68,8 @@ if (isset($_POST['generate_user'])) {
 if (($generate === 'zip' && $user === "admin") || $canGenerate) {
   $logFile = $app->generateZipLog($docs, "submit-logs");
 
-  $app->setZipFilename('SWES3116-Assignment-Nov-13-2023');
+  $filename = $course_title . '-upload';
+  $app->setZipFilename($course_title);
 
   $documentsDir = "uploads/";
   $app->createFile('');
@@ -86,7 +87,7 @@ if (($generate === 'zip' && $user === "admin") || $canGenerate) {
   $app->generateZip();
 }
 
-include_once "ass-partials/links.php";
+include_once "partials/links.php";
 ?>
 
 <body>
@@ -113,7 +114,7 @@ include_once "ass-partials/links.php";
             <p class="text-danger"><?= $canGenerateMsg ?></p>
             <button class="w-full btn btn-primary mt-4">Generate Now</button>
             <br><br>
-            <a href="/admin" class="btn">Go Back</a>
+            <a href="/admin.php" class="btn">Go Back</a>
           </form>
         </div>
       </main>
@@ -131,11 +132,11 @@ include_once "ass-partials/links.php";
         <div class="container-x flex flex-col md:flex-row gap-4">
           <nav class="w-full md:max-w-[270px]">
             <div class="border-2 border-muted p-4 rounded-2xl">
-              <a href="/admin" class="p-2 block hover:text-warning">Assignments</a>
+              <a href="/admin.php" class="p-2 block hover:text-warning">Assignments</a>
               <a href="?generate=zip" class="p-2 block hover:text-warning">Generate ZIP</a>
               <a href="?generate=log" class="p-2 block hover:text-warning">Generate Logs</a>
               <a href="#" class="p-2 block hover:text-warning">Option Cava</a>
-              <a href="/assignments" class="p-2 block hover:text-warning">Back >>></a>
+              <a href="/" class="p-2 block hover:text-warning">Back >>></a>
             </div>
 
             <div class="border-2 border-warning/50 bg-white mt-4 p-4 rounded-2xl">

@@ -1201,6 +1201,11 @@ h6{
   border-style: none;
 }
 
+.border-main{
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--hsl-clr-main), var(--tw-border-opacity));
+}
+
 .border-muted{
   --tw-border-opacity: 1;
   border-color: hsla(var(--hsl-clr-text-muted), var(--tw-border-opacity));
@@ -1219,11 +1224,6 @@ h6{
   border-color: hsla(var(--hsl-clr-warning), 0.5);
 }
 
-.border-main{
-  --tw-border-opacity: 1;
-  border-color: hsla(var(--hsl-clr-main), var(--tw-border-opacity));
-}
-
 .border-b-main{
   --tw-border-opacity: 1;
   border-bottom-color: hsla(var(--hsl-clr-main), var(--tw-border-opacity));
@@ -1232,6 +1232,11 @@ h6{
 .border-b-muted{
   --tw-border-opacity: 1;
   border-bottom-color: hsla(var(--hsl-clr-text-muted), var(--tw-border-opacity));
+}
+
+.bg-dark{
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--hsl-clr-dark), var(--tw-bg-opacity));
 }
 
 .bg-gray-50{
@@ -1267,17 +1272,12 @@ h6{
   background-color: hsla(var(--hsl-clr-white-l), var(--tw-bg-opacity));
 }
 
-.bg-dark{
-  --tw-bg-opacity: 1;
-  background-color: hsla(var(--hsl-clr-dark), var(--tw-bg-opacity));
-}
-
 .bg-button-art{
-  background-image: url('/ass-static/images/bg.button-art.svg');
+  background-image: url('/static/images/bg.button-art.svg');
 }
 
 .bg-v-circular{
-  background-image: url('/ass-static/images/vector-circular.svg');
+  background-image: url('/static/images/vector-circular.svg');
 }
 
 .bg-cover{
@@ -1329,6 +1329,11 @@ h6{
   padding-right: 1.5rem;
 }
 
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1352,11 +1357,6 @@ h6{
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .pb-8{
@@ -1574,12 +1574,6 @@ h6{
 .btn-main{
   background-color: hsl(var(--hsl-clr-main));
   border-color: hsl(var(--hsl-clr-main));
-  color: hsl(var(--hsl-clr-light));
-}
-
-.btn-dark{
-  background-color: hsl(var(--hsl-clr-dark));
-  border-color: hsl(var(--hsl-clr-dark));
   color: hsl(var(--hsl-clr-light));
 }
 

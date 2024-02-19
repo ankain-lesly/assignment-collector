@@ -78,7 +78,7 @@ $(".form-data_button").on("click", async (e) => {
     setBtnState($(".form-data_button"), true);
 
     const result = await useFetch({
-      url: "/ass-data-api-main",
+      url: "/ass-data-api-main.php",
       method: "POST",
       data: PageData,
     });

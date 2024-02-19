@@ -4,12 +4,12 @@ use Devlee\WakerORM\DB\Database;
 use Devlee\WakerORM\Services\FileUpload;
 use Devlee\WakerORM\Services\Library;
 
-include_once "ass-partials/global.php";
+include_once "partials/global.php";
 
-include_once "ass-classes/config.php";
-include_once "ass-classes/Database.php";
-include_once "ass-classes/FileUpload.php";
-include_once "ass-classes/Library.php";
+include_once "classes/config.php";
+include_once "classes/Database.php";
+include_once "classes/FileUpload.php";
+include_once "classes/Library.php";
 
 $student = $_POST['data_label'] ?? false;
 $document = $_FILES['document'] ?? false;

@@ -1,6 +1,6 @@
 <?php
-include_once "ass-partials/global.php";
-include_once "ass-partials/links.php";
+include_once "partials/global.php";
+include_once "partials/links.php";
 
 // $submitted = 153334;
 ?>
@@ -21,10 +21,9 @@ include_once "ass-partials/links.php";
             <span class="block dark:hidden">Light</span>
           </button>
         </div>
-        <a class="text-dark" href="/ass-admin?auth=no-auth">
+        <a class="text-dark" href="/admin.php?auth=no-auth">
           <i class="fas fa-user"></i>
         </a>
-
       </div>
     </header>
 
@@ -45,14 +44,14 @@ include_once "ass-partials/links.php";
         </div>
       </div>
       <div class="absolute top-0 w-full -z-10">
-        <img class="max-w-xs" src="/ass-static/images/card-bg.graphity.svg" alt="Hero art" class="">
+        <img class="max-w-xs" src="/static/images/card-bg.graphity.svg" alt="Hero art" class="">
       </div>
     </section>
 
     <!-- Main BG COver -->
     <section class="relative">
       <div class="absolute -top-16 w-full -z-10 flex-center">
-        <img src="/ass-static/images/bg.something-null.svg" alt="Section something-null">
+        <img src="/static/images/bg.something-null.svg" alt="Section something-null">
       </div>
     </section>
     <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
@@ -259,8 +258,8 @@ include_once "ass-partials/links.php";
 
   </div>
 
-  <script src="/ass-static/scripts/jQuery.min.js"></script>
-  <script src="/ass-static/scripts/main-script.js"></script>
+  <script src="/static/scripts/jQuery.min.js"></script>
+  <script src="/static/scripts/main-script.js"></script>
 </body>
 
 </html>

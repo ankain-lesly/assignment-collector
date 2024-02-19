@@ -23,11 +23,11 @@
   <link rel="icon" href="/favicon.ico" />
 
   <!-- // DEPLOY Dev -->
-  <script src="https://kit.fontawesome.com/8ea543231b.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/8ea543231b.js" crossorigin="anonymous"></script> -->
 
   <!-- // LOCAL DEV -->
-  <!-- <link rel="stylesheet" href="/_00FA/css/all.css" /> -->
-  <!-- <link rel="stylesheet" href="/ass-static/styles/_fonts.css"> -->
+  <link rel="stylesheet" href="/_00FA/css/all.css" />
+  <link rel="stylesheet" href="/static/styles/_fonts.css">
 
-  <link rel="stylesheet" href="/ass-static/styles/main-style.css">
+  <link rel="stylesheet" href="/static/styles/main-style.css">
 </head>
